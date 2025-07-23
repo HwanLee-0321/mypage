@@ -7,6 +7,9 @@ type Props = {
 };
 
 export const Image = ({ name, alt, className }: Props) => {
+  if (name.startsWith("http")) {
+    return <img src={name} alt={alt} className={className} />;
+  }
   try {
     // 필요에 따라 이미지 가져오기
     const image = require(`../assets/images/${name}`);

@@ -34,6 +34,15 @@
       "issueDate": "",
       "expiryDate": "",
       "verificationLink": "https://certi.programmers.co.kr/about/main"
+    },
+    {
+      "logo": "boj.png",
+      "url": "https://solved.ac/profile/ghksdl0321",
+      "title": "BOJ Badge",
+      "issuer": "solved.ac",
+      "issueDate": "",
+      "expiryDate": "",
+      "verificationLink": "https://solved.ac/profile/ghksdl0321"
     }
   ]
 }

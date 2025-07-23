@@ -30,7 +30,7 @@ export const Experience = () => {
 
           const totalDuration = experience.roles.reduce((cnt: number, role: any) => {
             const startDate = moment(role.startDate);
-            const timeEnd = moment(role.currentJob ? new Date() : new Date(role.endDate));
+            const timeEnd = moment(role.Present ? new Date() : new Date(role.endDate));
             const duration = moment.duration(timeEnd.diff(startDate));
             return cnt + duration.asMonths();
           }, 0);
@@ -55,14 +55,14 @@ export const Experience = () => {
                   <hr />
                   {experience.roles.map((role: any, j: number) => {
                     const startDate = moment(role.startDate);
-                    const timeEnd = moment(role.currentJob ? new Date() : new Date(role.endDate));
+                    const timeEnd = moment(role.Present ? new Date() : new Date(role.endDate));
                     const duration = moment.duration(timeEnd.diff(startDate)).asMonths();
 
                     return (
                       <div key={j} className="mb-3">
                         <h6 className="mb-0">{role.title}</h6>
                         <small className="text-muted">
-                          {startDate.format("MMM YYYY")} - {role.currentJob ? "Present" : timeEnd.format("MMM YYYY")} ({getDuration(duration)})
+                          {startDate.format("MMM YYYY")} - {role.Present ? "Present" : timeEnd.format("MMM YYYY")} ({getDuration(duration)})
                         </small>
                         <br />
                         <small className="text-muted">{role.location}</small>
