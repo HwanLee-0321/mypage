@@ -61,7 +61,7 @@ export const About = () => (
         <p className="mt-4">
           코드는 제 개인{" "}
           <a
-            href="https://github.com/oswaldodiaz/mypage"
+            href="https://github.com/HwanLee-0321/mypage"
             target="_blank"
             rel="noopener noreferrer"
           >
