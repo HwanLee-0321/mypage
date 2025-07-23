@@ -1,0 +1,163 @@
+a {
+  color: #0d6efd;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #3b8dff;
+  text-decoration: none;
+}
+
+.profileSummaryPicture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #0d6efd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profilePic {
+  max-height: 4vmin;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.profileSummary {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.profileSummary .display-3 {
+    font-weight: 300;
+}
+
+.profileSummary .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #adb5bd;
+}
+
+.profileSummary .social a {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0 15px;
+  transition: color 0.2s ease-in-out;
+}
+
+.profileSummary .social a:hover {
+  color: #0d6efd;
+}
+
+.certifications {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.certifications img {
+  width: 100%;
+  max-width: 120px;
+  margin: 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.certifications img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.container h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #343a40;
+  font-weight: 300;
+  text-align: center;
+}
+
+.card-img-top {
+    width: 80px;
+    height: 80px;
+    margin: 1.5rem auto 0;
+    border-radius: 5px;
+}
+
+.card-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: #0d6efd;
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card-text strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card h6 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+.card .text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+.jobTotalDuration, .jobDuration, .jobLocation {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.jobTotalDuration {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.about {
+  font-style: normal;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.about img {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-top: 1px solid #343a40;
+}
+
+footer .social a {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+footer .social a:hover {
+  color: #0d6efd;
+}
+
+.social-icon-img {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.15em;
+}
+

@@ -1,0 +1,39 @@
+{
+  "studies": [
+    {
+      "institute": "Chosun University(조선대학교)",
+      "logo": "ucvLogo.png",
+      "url": "https://www3.chosun.ac.kr/chosun/index.do",
+      "title": "컴퓨터공학과(학사)",
+      "durationInYears": "6",
+      "graduationYear": 2030
+    },
+    {
+      "institute": "Membership of Security",
+      "logo": "ucvLogo.png",
+      "url": "https://sw.chosun.ac.kr/main/menu?gc=Program&do=sinform&program_id=N4l_FxTuh5268301571&psin_id=uTHh0AzNAG068301571",
+      "title": "조선대학교 정보보안 분야 멤버쉽",
+      "durationInYears": "1",
+      "graduationYear": 2026
+    },
+    {
+      "institute": "스마트인재개발원 일경험 실무교육",
+      "logo": "smhrd.png",
+      "url": "https://lms.smhrd.or.kr/home/main/indexMain",
+      "title": "",
+      "durationInYears": "1",
+      "graduationYear": 2025
+    }
+  ],
+  "certifications": [
+    {
+      "logo": "pcce.png",
+      "url": "https://certi.programmers.co.kr/about/main",
+      "title": "PCCE",
+      "issuer": "LeeJaeHwan",
+      "issueDate": "",
+      "expiryDate": "",
+      "verificationLink": "https://certi.programmers.co.kr/about/main"
+    }
+  ]
+}
