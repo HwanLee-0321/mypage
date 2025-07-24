@@ -4,13 +4,13 @@ import moment from "moment";
 import { getData } from "../utils/dataExtractor";
 import { Image } from "../utils/Image";
 
-export const Posts = () => {
-  const posts = getData("posts");
+export const Projects = () => {
+  const projects = getData("projects");
   return (
     <Container>
-      <h2>Posts</h2>
+      <h2>Projects</h2>
       <Row>
-        {posts.map((post: any, i: number) => {
+        {projects.map((project: any, i: number) => {
           moment.locale("en");
           return (
             <Col md={6} key={i}>
@@ -18,18 +18,18 @@ export const Posts = () => {
                 <Card.Body>
                   <Row className="align-items-center">
                     <Col xs={3} className="text-center">
-                      <Image name={post.path} alt={post.title} className="card-img-top" />
+                      <Image name={project.path} alt={project.title} className="card-img-top" />
                     </Col>
                     <Col xs={9}>
                       <Card.Title>
-                        <a href={post.url} target="_blank" rel="noopener noreferrer">
-                          {post.title}
+                        <a href={project.url} target="_blank" rel="noopener noreferrer">
+                          {project.title}
                         </a>
                       </Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                        {moment(post.date).format("YYYY, MMM Do")}
+                        {moment(project.date).format("YYYY, MMM Do")}
                       </Card.Subtitle>
-                      <Card.Text>{post.description}</Card.Text>
+                      <Card.Text>{project.description}</Card.Text>
                     </Col>
                   </Row>
                 </Card.Body>

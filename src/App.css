@@ -160,3 +160,29 @@ footer .social a:hover {
   vertical-align: -0.15em;
 }
 
+/* Velog Sidebar Styles */
+.velog-sidebar {
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 0.3rem;
+  margin-top: 2rem;
+}
+
+.velog-sidebar h4 {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #343a40;
+  font-weight: 300;
+  text-align: center;
+}
+
+.velog-sidebar .list-group-item {
+  background-color: #2e2e2e;
+  border-color: #343a40;
+  color: #ffffff;
+}
+
+.velog-sidebar .list-group-item:hover {
+  background-color: #3b8dff;
+  color: #ffffff;
+}

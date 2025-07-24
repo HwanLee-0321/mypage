@@ -47,6 +47,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "https://v2.velog.io",
   "devDependencies": {
     "@types/classnames": "^2.3.1",
     "@types/react-router-dom": "^5.3.3",

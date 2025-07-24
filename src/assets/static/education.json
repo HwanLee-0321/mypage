@@ -20,7 +20,7 @@
       "institute": "스마트인재개발원 일경험 실무교육",
       "logo": "smhrd.png",
       "url": "https://lms.smhrd.or.kr/home/main/indexMain",
-      "title": "",
+      "title": "교육생",
       "durationInYears": "1",
       "graduationYear": 2025
     }
@@ -43,6 +43,15 @@
       "issueDate": "",
       "expiryDate": "",
       "verificationLink": "https://solved.ac/profile/ghksdl0321"
+    },
+    {
+      "logo": "dhack.png",
+      "url": "https://dreamhack.io/ranking/ctf?search=%EB%8A%99%EA%B3%A0%EB%B3%91%EB%93%A0&page=1",
+      "title": "BOJ Badge",
+      "issuer": "dreamhack.io",
+      "issueDate": "",
+      "expiryDate": "",
+      "verificationLink": "https://dreamhack.io/ranking/ctf?search=%EB%8A%99%EA%B3%A0%EB%B3%91%EB%93%A0&page=1"
     }
   ]
 }
