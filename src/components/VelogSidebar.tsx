@@ -7,6 +7,7 @@ import { ListGroup } from 'react-bootstrap';
 interface Post {
   id: string;
   title: string;
+  short_description: string;
   url_slug: string;
   user: {
     username: string;
@@ -24,6 +25,7 @@ export const VelogSidebar = () => {
           posts(username: $username, limit: $limit) {
             id
             title
+            short_description
             url_slug
             user {
               username
@@ -66,7 +68,12 @@ export const VelogSidebar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {post.title}
+            <div>
+              <strong>{post.title}</strong>
+            </div>
+            <p style={{ fontSize: '0.9em', color: '#6c757d', margin: 0 }}>
+              {post.short_description}
+            </p>
           </ListGroup.Item>
         ))}
       </ListGroup>
