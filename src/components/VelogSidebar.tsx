@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { ListGroup } from 'react-bootstrap';
 
@@ -29,24 +31,21 @@ export const VelogSidebar = () => {
           }
         }
       `;
+      const variables = {
+        username: velogUsername,
+        limit: 10,
+      };
+
+      // GraphQL 쿼리를 URL 파라미터로 인코딩합니다.
+      const encodedQuery = encodeURIComponent(query);
+      const encodedVariables = encodeURIComponent(JSON.stringify(variables));
+      const apiUrl = `https://v2.velog.io/graphql?query=${encodedQuery}&variables=${encodedVariables}`;
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
 
       try {
-        const response = await fetch('/graphql', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            query,
-            variables: {
-              username: velogUsername,
-              limit: 10, // 가져올 게시글 수
-            },
-          }),
-        });
-
-        const { data } = await response.json();
-        setPosts(data.posts);
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        setPosts(data.data.posts);
       } catch (error) {
         console.error('Velog posts fetch error:', error);
       }

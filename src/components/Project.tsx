@@ -29,7 +29,17 @@ export const Projects = () => {
                       <Card.Subtitle className="mb-2 text-muted">
                         {moment(project.date).format("YYYY, MMM Do")}
                       </Card.Subtitle>
-                      <Card.Text>{project.description}</Card.Text>
+                      <Card.Text>
+                        {project.description}
+                        {project.post && (
+                          <>
+                            <br />
+                            <a href={project.post} target="_blank" rel="noopener noreferrer">
+                              관련 포스트 보기
+                            </a>
+                          </>
+                        )}
+                      </Card.Text>
                     </Col>
                   </Row>
                 </Card.Body>
