@@ -41,8 +41,7 @@ export const About = () => (
     <Row className="text-center">
       <Col>
         <p className="lead">
-          이 사이트는 S3에 정적 웹사이트로 배포되었으며, 다음 기술들을 사용하여
-          구축되었습니다:
+          이 사이트는 다음 기술들을 사용하여 구축되었습니다:
         </p>
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           {images.map((image: any, i: number) => (
