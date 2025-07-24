@@ -2,7 +2,7 @@
 
 This project is a personal portfolio website built using React and TypeScript. It consists of pages introducing your tech stack, career, education, certifications, and posts.
 
-[Visit Page](https://hwanlee-page.web.app/)  
+[Visit Page](https://hwanlee-page.web.app/) | [한국어버전 README](https://github.com/HwanLee-0321/mypage/blob/main/README(KOR).md)
 
 ## 🌟 Features
 

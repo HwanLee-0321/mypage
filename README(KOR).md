@@ -3,7 +3,7 @@
 이 프로젝트는 React와 TypeScript를 사용하여 제작된 개인 포트폴리오 웹사이트입니다. 자신의 기술 스택, 경력, 학력, 자격증 및 포스트를 소개하는 페이지로 구성되어 있습니다.
 
 ## 접속 링크
-[페이지 접속](https://hwanlee-page.web.app/)
+[페이지 접속](https://hwanlee-page.web.app/) | [ENG README](https://github.com/HwanLee-0321/mypage)
 
 ## 🌟 주요 기능
 
