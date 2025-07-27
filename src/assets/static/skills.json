@@ -1,0 +1,24 @@
+{
+  "Language": [
+    { "name": "TypeScript", "color": "#3178C6" },
+    { "name": "Java", "color": "#FFA500" },
+    { "name": "C/C++", "color": "#00599C" },
+    { "name": "JavaScript", "color": "#F7DF1E" },
+    { "name": "Python", "color": "#3776AB" }
+  ],
+  "Frontend": [
+    { "name": "Next.js (React)", "color": "#000000" },
+    { "name": "React-Query", "color": "#FF4154" },
+    { "name": "React-Hook-Form", "color": "#EC5990" }
+  ],
+  "Backend": [
+    { "name": "Django", "color": "#092E20" },
+    { "name": "Firebase", "color": "#FFCA28" },
+    { "name": "Supabase", "color": "#3ECF8E" }
+  ],
+  "DevOps": [
+    { "name": "AWS", "color": "#FF9900" },
+    { "name": "Vercel", "color": "#000000" },
+    { "name": "Docker", "color": "#2496ED" }
+  ]
+}

@@ -27,12 +27,12 @@
     "description": "드래그 및 우클릭 방지 해둔 사이트를 우회하는 프로젝트"
   },
   {
-    "title": "목소리 인식 AI",
-    "url": "https://github.com/HwanLee-0321/whisper_ai",
+    "title": "한전공사 API 활용 프로젝트",
+    "url": "https://github.com/HwanLee-0321/Korea_Electric_API",
     "path": "github.png",
     "post": "",
     "logo": "",
     "date": "2025-02-26",
-    "description": "OpenAI API를 이용한 목소리 인식 AI"
+    "description": "한전공사 API를 활용해서 전력데이터 뽑는 프로젝트"
   }
 ]

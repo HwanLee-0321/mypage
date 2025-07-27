@@ -12,6 +12,7 @@ import { Experience } from "./components/Experience";
 import { Footer } from "./components/Footer";
 import { Projects } from "./components/Project";
 import { ProfileSummary } from "./components/ProfileSummary";
+import Skills from "./components/Skills";
 import { TopBar } from "./components/TopBar";
 import { VelogSidebar } from "./components/VelogSidebar"; // 새로 추가
 
@@ -23,6 +24,9 @@ export const App = () => {
       <Container>
         <Row>
           <Col md={9}> {/* 기존 콘텐츠를 9열로 감싸기 */}
+            <Row>
+              <Skills />
+            </Row>
             <Row>
               <Certifications />
             </Row>
