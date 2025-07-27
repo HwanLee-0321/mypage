@@ -39,11 +39,10 @@ export const VelogSidebar = () => {
       // GraphQL 쿼리를 URL 파라미터로 인코딩합니다.
       const encodedQuery = encodeURIComponent(query);
       const encodedVariables = encodeURIComponent(JSON.stringify(variables));
-      const apiUrl = `https://v2.velog.io/graphql?query=${encodedQuery}&variables=${encodedVariables}`;
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(apiUrl)}`;
+      const apiUrl = `/graphql?query=${encodedQuery}&variables=${encodedVariables}`;
 
       try {
-        const response = await fetch(proxyUrl);
+        const response = await fetch(apiUrl);
         const data = await response.json();
         setPosts(data.data.posts);
       } catch (error) {
