@@ -19,6 +19,7 @@
   "DevOps": [
     { "name": "AWS", "color": "#FF9900" },
     { "name": "Vercel", "color": "#000000" },
-    { "name": "Docker", "color": "#2496ED" }
+    { "name": "Docker", "color": "#2496ED" },
+    { "name": "Git/GitHub", "color": "#000000" }
   ]
 }
