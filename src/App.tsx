@@ -46,12 +46,12 @@ export const App = () => {
             <Row>
               <Education />
             </Row>
-            {/* About 컴포넌트를 이 위치에서 제거합니다. */}
+            {/* Remove the About component from this location. */}
           </Col>
         </Row>
       </Container>
 
-      {/* About 컴포넌트를 Container 외부, Footer 상단으로 이동 */}
+      {/* Move the About component outside the Container, above the Footer */}
       <About />
       
       <Footer />

@@ -3,19 +3,19 @@ const admin = require('firebase-admin');
 const fs = require('fs');
 const path = require('path');
 
-// 1. 서비스 계정 키 파일 경로
-// 스크립트 실행 위치 기준으로 ../serviceAccountKey.json
+// 1. Path to the service account key file
+// Relative to the script execution location: ../serviceAccountKey.json
 const serviceAccount = require('../serviceAccountKey.json');
 
-// 2. Firebase Admin SDK 초기화
+// 2. Initialize Firebase Admin SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
 const db = admin.firestore();
 
-// 3. 데이터 소스 경로
-// 스크립트 실행 위치 기준으로 ../src/assets/static
+// 3. Data source path
+// Relative to the script execution location: ../src/assets/static
 const dataDir = path.join(__dirname, '../src/assets/static');
 const filesToUpload = ['awards', 'education', 'experience', 'projects', 'skills'];
 
@@ -31,18 +31,18 @@ const uploadFile = async (fileName) => {
 
   console.log(`Uploading data for ${fileName}...`);
 
-  // 데이터가 배열인지 객체인지 확인
+  // Check if the data is an array or an object
   if (Array.isArray(data)) {
-    // 데이터가 배열일 경우: 각 항목을 개별 문서로 추가
+    // If the data is an array: add each item as a separate document
     const batch = db.batch();
     data.forEach(item => {
-      const docRef = collectionRef.doc(); // 자동 ID로 문서 생성
+      const docRef = collectionRef.doc(); // Create a document with an automatic ID
       batch.set(docRef, item);
     });
     await batch.commit();
     console.log(`Successfully uploaded ${data.length} documents to ${fileName} collection.`);
   } else {
-    // 데이터가 객체일 경우: 단일 문서로 추가 (문서 ID는 컬렉션 이름과 동일하게 설정)
+    // If the data is an object: add as a single document (document ID is set to be the same as the collection name)
     const docRef = collectionRef.doc(fileName);
     await docRef.set(data);
     console.log(`Successfully uploaded single document to ${fileName} collection with ID '${fileName}'.`);

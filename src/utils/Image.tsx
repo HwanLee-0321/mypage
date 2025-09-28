@@ -12,7 +12,7 @@ export const Image = ({ name, alt, className, style }: Props) => {
     return <img src={name} alt={alt} className={className} style={style} />;
   }
   try {
-    // 필요에 따라 이미지 가져오기
+    // Import image as needed
     const image = require(`../assets/images/${name}`);
 
     if (!image) return null;

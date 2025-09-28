@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Image } from "../utils/Image";
 import SocialIcons from "./SocialIcons";
-import './ProfileSummary.css'; // 스타일 파일을 import 합니다.
+import './ProfileSummary.css'; // Import the style file.
 
 export const ProfileSummary = () => {
   const fullText = "Welcome Lee Jae-Hwan's Page";
@@ -17,13 +17,13 @@ export const ProfileSummary = () => {
         index++;
       } else {
         clearInterval(typingInterval);
-        // 타이핑이 끝나면 커서가 깜빡이도록 설정
+        // Set the cursor to blink when typing is finished
         const cursorInterval = setInterval(() => {
           setShowCursor(prev => !prev);
         }, 500);
         return () => clearInterval(cursorInterval);
       }
-    }, 100); // 타이핑 속도 조절
+    }, 100); // Adjust typing speed
 
     return () => clearInterval(typingInterval);
   }, []);

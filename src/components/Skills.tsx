@@ -67,7 +67,7 @@ const Skills = () => {
       <h2 style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2rem' }}>Skills</h2>
       <Row>
         {Object.entries(skills).map(([category, skillList]) => (
-          // Col의 md 속성을 6으로 변경하여 한 행에 2개씩 표시되도록 수정
+          // Changed the md property of Col to 6 to display two items per row
           <Col key={category} xs={12} md={6} className="mb-4">
             <Card style={cardStyle}>
               <Card.Body>

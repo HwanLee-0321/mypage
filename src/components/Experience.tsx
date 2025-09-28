@@ -21,7 +21,7 @@ interface ExperienceData {
   roles: Role[];
 }
 
-// 기간을 "년"과 "월"로 변환하는 함수
+// Function to convert duration to "years" and "months"
 const getDuration = (duration: number) => {
   const years = Math.floor(duration / 12);
   const months = Math.round(duration % 12);

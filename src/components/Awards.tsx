@@ -48,7 +48,7 @@ export const Awards = () => {
                   download
                   variant="primary"
                 >
-                  상장 다운로드하기
+                  Download Certificate
                 </Button>
               </Card.Body>
             </Card>

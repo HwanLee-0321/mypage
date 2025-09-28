@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ListGroup, ProgressBar } from 'react-bootstrap';
 
-// Velog 포스트 데이터 타입을 정의합니다.
+// Define the Velog post data type.
 interface Post {
   id: string;
   title: string;
@@ -14,7 +14,7 @@ export const VelogSidebar = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [isDeterminate, setIsDeterminate] = useState(false);
-  const velogUsername = 'hwan_lee'; // 사용자 Velog 아이디
+  const velogUsername = 'hwan_lee'; // User's Velog ID
 
   useEffect(() => {
     const fetchVelogPosts = async () => {

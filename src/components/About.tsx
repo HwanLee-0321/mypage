@@ -41,7 +41,7 @@ export const About = () => (
     <Row className="text-center">
       <Col>
         <p className="lead">
-          이 사이트는 다음 기술들을 사용하여 구축되었습니다:
+          This site was built using the following technologies:
         </p>
         <div className="d-flex justify-content-center align-items-center flex-wrap">
           {images.map((image: any, i: number) => (
@@ -58,7 +58,7 @@ export const About = () => (
           ))}
         </div>
         <p className="mt-4">
-          코드는 제 개인{" "}
+          The code can be found on my personal{" "}
           <a
             href="https://github.com/HwanLee-0321/mypage"
             target="_blank"
@@ -66,7 +66,7 @@ export const About = () => (
           >
             Github
           </a>{" "}
-          계정에서 확인하실 수 있습니다.
+          account.
         </p>
       </Col>
     </Row>
