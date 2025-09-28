@@ -1,0 +1,23 @@
+# Dependencies
+/node_modules
+
+# Build artifacts
+/build
+/coverage
+
+# Firebase
+.firebase
+
+# IDEs
+.idea/
+
+# Secrets
+serviceAccountKey.json
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Static Data
+/src/assets/static

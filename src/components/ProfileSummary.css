@@ -1,0 +1,71 @@
+.terminal-window {
+  background-color: #282c34;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.terminal-header {
+  background-color: #e0e0e0;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.terminal-buttons {
+  display: flex;
+}
+
+.terminal-button {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.terminal-title {
+  color: #555;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.terminal-body {
+  color: #c5c8c6;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  padding: 1.5rem;
+  font-size: 2rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.prompt {
+  color: #62d628;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+  color: #c5c8c6;
+}
+
+.cursor-hidden {
+  visibility: hidden;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #c5c8c6;
+  }
+}

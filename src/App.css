@@ -1,0 +1,279 @@
+/* App.css */
+
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
+
+a {
+  color: #0d6efd;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #3b8dff;
+  text-decoration: none;
+}
+
+.container h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #343a40;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Layout Styles
+   ========================================================================== */
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1720px;
+  }
+}
+
+.main-content {
+  padding-left: 2rem; /* 사이드바와 본문 사이에 간격 추가 */
+}
+
+/* ==========================================================================
+   Profile Summary Section
+   ========================================================================== */
+
+.profileSummary {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-radius: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+.profileSummaryPicture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #0d6efd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profilePic {
+  max-height: 4vmin;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+.profileSummary .display-3 {
+  font-weight: 300;
+}
+
+.profileSummary .lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #adb5bd;
+}
+
+/* ==========================================================================
+   Social Icons
+   ========================================================================== */
+
+.social a {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0 15px;
+  transition: color 0.2s ease-in-out;
+}
+
+.social a:hover {
+  color: #0d6efd;
+}
+
+.social-icon-img {
+  height: 1em;
+  width: 1em;
+  vertical-align: -0.15em;
+}
+
+/* ==========================================================================
+   Card Styles
+   ========================================================================== */
+
+.card {
+  background-color: #1e1e1e !important;
+  border: 1px solid #2e2e2e !important;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  width: 80px;
+  height: 80px;
+  margin: 1.5rem auto 0;
+  border-radius: 5px;
+}
+
+.card-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: #0d6efd;
+}
+
+.card-text {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.card-text strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card h6 {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.card .text-muted {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ==========================================================================
+   Experience Section (Job)
+   ========================================================================== */
+
+.jobTotalDuration, .jobDuration, .jobLocation {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.jobTotalDuration {
+  display: block;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   Certifications Section
+   ========================================================================== */
+
+.certifications {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.certifications img {
+  width: 100%;
+  max-width: 120px;
+  margin: 10px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.certifications img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+
+.about {
+  font-style: normal;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.about img {
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Sidebar Styles
+   ========================================================================== */
+
+.sidebar {
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 0.3rem;
+  margin-top: 2rem;
+  height: fit-content;
+}
+
+.velog-sidebar h4 {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #343a40;
+  font-weight: 300;
+  text-align: center;
+}
+
+.velog-sidebar .list-group-item {
+  background-color: #2e2e2e;
+  border-color: #343a40;
+  color: #ffffff;
+}
+
+.velog-sidebar .list-group-item:hover {
+  background-color: #3b8dff;
+  color: #ffffff;
+}
+
+.sidebar-divider {
+  margin: 2rem 0;
+  border-top: 1px solid #343a40;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  background-color: #1e1e1e;
+  border-top: 1px solid #343a40;
+}
+
+footer .social a {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+footer .social a:hover {
+  color: #0d6efd;
+}
+
+/* ==========================================================================
+   Award Card Link Styles
+   ========================================================================== */
+
+.award-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* 링크 영역을 카드 전체로 확장 */
+}
+
+.award-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.award-card:hover {
+  transform: translateY(-5px) scale(1.02); /* 마우스 오버 시 약간 확대되는 효과 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.award-title {
+  color: #ffffff !important; /* 제목 색상을 흰색으로 변경 */
+}
