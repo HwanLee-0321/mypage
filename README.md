@@ -1,6 +1,6 @@
 # Mypage - Personal Portfolio Website
 
-This project is a personal portfolio website built using React and TypeScript, with Firebase for the backend. It showcases your tech stack, career, education, certifications, and posts.
+This project is a personal portfolio website built using React and TypeScript, with Firebase for the backend. It showcases your tech stack, career, education, certifications, and posts. | [Visit Page](https://hwanlee.site/) |
 
 <p align="center">
   <b><a href="./README.md">English</a></b> |
@@ -11,8 +11,6 @@ This project is a personal portfolio website built using React and TypeScript, w
   <b><a href="./docs/README.de.md">Deutsch</a></b> |
   <b><a href="./docs/README.ar.md">العربية</a></b>
 </p>
-
-| [Visit Page](https://hwanlee.site/)) |
 
 ## 🌟 Features
 
