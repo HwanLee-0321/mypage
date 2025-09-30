@@ -2,7 +2,7 @@
 
 该项目是一个使用 React 和 TypeScript 构建的个人作品集网站，后端使用 Firebase。它包含介绍您的技术栈、职业生涯、教育背景、证书和帖子的页面。
 
-| [访问页面](https://hwanlee-page.web.app/) | [英文自述文件](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
+| [访问页面](https://hwanlee.site/) | [英文自述文件](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
 
 ## 🌟 功能
 

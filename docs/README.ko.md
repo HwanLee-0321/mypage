@@ -2,7 +2,7 @@
 
 이 프로젝트는 React와 TypeScript를 사용하여 제작된 개인 포트폴리오 웹사이트이며, 백엔드로는 Firebase를 사용합니다. 당신의 기술 스택, 경력, 학력, 자격증 및 게시물을 소개하는 페이지로 구성되어 있습니다.
 
-| [페이지 방문하기](https://hwanlee-page.web.app/) | [English README](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
+| [페이지 방문하기](https://hwanlee.site/) | [English README](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
 
 ## 🌟 주요 기능
 

@@ -2,7 +2,7 @@
 
 このプロジェクトは、ReactとTypeScriptを使用して構築された個人ポートフォリオウェブサイトで、バックエンドにはFirebaseを使用しています。あなたの技術スタック、経歴、学歴、資格、投稿を紹介するページで構成されています。
 
-| [ページにアクセス](https://hwanlee-page.web.app/) | [英語のREADME](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
+| [ページにアクセス](https://hwanlee.site/) | [英語のREADME](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
 
 ## 🌟 特徴
 

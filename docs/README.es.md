@@ -2,7 +2,7 @@
 
 Este proyecto es un sitio web de portafolio personal construido con React y TypeScript, con Firebase para el backend. Muestra tu pila de tecnología, carrera, educación, certificaciones y publicaciones.
 
-| [Visitar página](https://hwanlee-page.web.app/) | [README en inglés](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
+| [Visitar página](https://hwanlee.site/) | [README en inglés](https://github.com/HwanLee-0321/mypage/blob/main/README.md) |
 
 ## 🌟 Características
 

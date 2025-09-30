@@ -12,7 +12,7 @@ This project is a personal portfolio website built using React and TypeScript, w
   <b><a href="./docs/README.ar.md">العربية</a></b>
 </p>
 
-| [Visit Page](https://hwanlee-page.web.app/) |
+| [Visit Page](https://hwanlee.site/) |
 
 ## 🌟 Features
 
