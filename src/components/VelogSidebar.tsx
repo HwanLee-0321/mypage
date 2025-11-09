@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ListGroup, ProgressBar } from 'react-bootstrap';
+import React, { useState, useEffect, useCallback } from 'react';
+import { ListGroup, Spinner, Button } from 'react-bootstrap';
 
 // Define the Velog post data type.
 interface Post {
@@ -12,103 +12,135 @@ interface Post {
 export const VelogSidebar = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [isDeterminate, setIsDeterminate] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const VELOG_CACHE_KEY = 'velog_posts_cache';
+  const VELOG_CACHE_TTL = 1000 * 60 * 10; // 10 minutes
   const velogUsername = 'hwan_lee'; // User's Velog ID
 
-  useEffect(() => {
-    const fetchVelogPosts = async () => {
-      setIsLoading(true);
-      setProgress(0);
-      setIsDeterminate(false);
-      const rssUrl = `https://v2.velog.io/rss/${velogUsername}`;
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+  const sanitizeDescription = (html: string) => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = html;
+    return tempDiv.textContent || tempDiv.innerText || '';
+  };
 
+  const parseRss = (xmlText: string): Post[] => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+    const items = Array.from(xmlDoc.querySelectorAll('item'));
+
+    return items.map((item) => {
+      const title = item.querySelector('title')?.textContent?.replace(/<!\[CDATA\[(.*?)\]\]>/, '$1')?.trim() || '';
+      const link = item.querySelector('link')?.textContent?.trim() || '';
+      const guid = item.querySelector('guid')?.textContent?.trim() || link;
+      const descriptionHTML =
+        item.querySelector('description')?.textContent?.replace(/<!\[CDATA\[(.*?)\]\]>/, '$1') || '';
+
+      const descriptionText = sanitizeDescription(descriptionHTML);
+      const short_description =
+        descriptionText.substring(0, 100) + (descriptionText.length > 100 ? '...' : '');
+
+      return {
+        id: guid || `${title}-${link}`,
+        title,
+        link,
+        short_description,
+      };
+    });
+  };
+
+  const fetchRssText = useCallback(async () => {
+    const rssUrl = `https://v2.velog.io/rss/${velogUsername}`;
+    const candidates = [
+      `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`,
+      `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(rssUrl)}`,
+    ];
+
+    for (const url of candidates) {
       try {
-        const response = await fetch(proxyUrl);
-        if (!response.body) {
-          throw new Error("Response body is null");
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
         }
-
-        const reader = response.body.getReader();
-        const contentLength = +(response.headers.get('Content-Length') || 0);
-        if (contentLength > 0) {
-          setIsDeterminate(true);
+        const text = await response.text();
+        if (text) {
+          return text;
         }
-
-        let receivedLength = 0;
-        let chunks = [];
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) {
-            break;
-          }
-          chunks.push(value);
-          receivedLength += value.length;
-          if (contentLength > 0) {
-            setProgress(Math.round((receivedLength / contentLength) * 100));
-          }
-        }
-
-        let chunksAll = new Uint8Array(receivedLength);
-        let position = 0;
-        for (let chunk of chunks) {
-          chunksAll.set(chunk, position);
-          position += chunk.length;
-        }
-
-        const resultText = new TextDecoder("utf-8").decode(chunksAll);
-        const data = JSON.parse(resultText);
-        const text = data.contents;
-        
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(text, 'application/xml');
-        
-        const items = xmlDoc.querySelectorAll('item');
-        const parsedPosts: Post[] = [];
-
-        items.forEach(item => {
-          const title = item.querySelector('title')?.textContent?.replace(/<!\[CDATA\[(.*?)\]\]>/, '$1') || '';
-          const link = item.querySelector('link')?.textContent || '';
-          const guid = item.querySelector('guid')?.textContent || link;
-          
-          const descriptionHTML = item.querySelector('description')?.textContent?.replace(/<!\[CDATA\[(.*?)\]\]>/, '$1') || '';
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = descriptionHTML;
-          const descriptionText = tempDiv.textContent || '';
-          const short_description = descriptionText.substring(0, 100) + (descriptionText.length > 100 ? '...' : '');
-
-          parsedPosts.push({
-            id: guid,
-            title: title,
-            link: link,
-            short_description: short_description,
-          });
-        });
-
-        setPosts(parsedPosts.slice(0, 10));
       } catch (error) {
-        console.error('Velog RSS fetch error:', error);
-      } finally {
-        setIsLoading(false);
+        console.warn(`Velog RSS proxy failed (${url}):`, error);
       }
-    };
+    }
+
+    throw new Error('RSS 피드에 연결할 수 없습니다.');
+  }, [velogUsername]);
+
+  const persistPostsToCache = (items: Post[]) => {
+    if (typeof window === 'undefined') return;
+    try {
+      const payload = {
+        timestamp: Date.now(),
+        posts: items,
+      };
+      sessionStorage.setItem(VELOG_CACHE_KEY, JSON.stringify(payload));
+    } catch (error) {
+      console.warn('Failed to persist Velog cache:', error);
+    }
+  };
+
+  const readPostsFromCache = (): Post[] | null => {
+    if (typeof window === 'undefined') return null;
+    try {
+      const cached = sessionStorage.getItem(VELOG_CACHE_KEY);
+      if (!cached) return null;
+      const payload = JSON.parse(cached);
+      if (Date.now() - payload.timestamp > VELOG_CACHE_TTL) {
+        sessionStorage.removeItem(VELOG_CACHE_KEY);
+        return null;
+      }
+      return payload.posts;
+    } catch (error) {
+      console.warn('Failed to read Velog cache:', error);
+      return null;
+    }
+  };
+
+  const fetchVelogPosts = useCallback(async () => {
+    setIsLoading(true);
+    setErrorMessage(null);
+    try {
+      const xmlText = await fetchRssText();
+      const parsedPosts = parseRss(xmlText);
+      const limitedPosts = parsedPosts.slice(0, 10);
+      setPosts(limitedPosts);
+      persistPostsToCache(limitedPosts);
+    } catch (error) {
+      console.error('Velog RSS fetch error:', error);
+      setErrorMessage('Velog 피드를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      setPosts([]);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [fetchRssText]);
+
+  useEffect(() => {
+    const cachedPosts = readPostsFromCache();
+    if (cachedPosts && cachedPosts.length > 0) {
+      setPosts(cachedPosts);
+      setIsLoading(false);
+      return;
+    }
 
     fetchVelogPosts();
-  }, []);
+  }, [fetchVelogPosts]);
 
   return (
     <div className="velog-sidebar">
       <h4>My Velog Posts</h4>
       {isLoading ? (
         <div className="text-center" style={{ padding: '1rem 0' }}>
-          {isDeterminate ? (
-            <ProgressBar now={progress} label={`${progress}%`} />
-          ) : (
-            <ProgressBar animated striped now={100} label="Loading..." />
-          )}
+          <Spinner animation="border" role="status" variant="light" />
         </div>
-      ) : (
+      ) : posts.length > 0 ? (
         <ListGroup>
           {posts.map((post) => (
             <ListGroup.Item
@@ -127,6 +159,18 @@ export const VelogSidebar = () => {
             </ListGroup.Item>
           ))}
         </ListGroup>
+      ) : (
+        <div className="text-center text-muted" style={{ padding: '1rem 0' }}>
+          최근 게시글이 없습니다.
+        </div>
+      )}
+      {errorMessage && (
+        <div className="text-center mt-3">
+          <p className="text-muted small mb-2">{errorMessage}</p>
+          <Button variant="outline-light" size="sm" onClick={fetchVelogPosts}>
+            다시 불러오기
+          </Button>
+        </div>
       )}
     </div>
   );

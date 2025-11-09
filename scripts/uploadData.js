@@ -19,6 +19,23 @@ const db = admin.firestore();
 const dataDir = path.join(__dirname, '../src/assets/static');
 const filesToUpload = ['awards', 'education', 'experience', 'projects', 'skills'];
 
+const sortObject = (value) => {
+  if (Array.isArray(value)) {
+    return value.map(sortObject);
+  }
+  if (value !== null && typeof value === 'object') {
+    return Object.keys(value)
+      .sort()
+      .reduce((acc, key) => {
+        acc[key] = sortObject(value[key]);
+        return acc;
+      }, {});
+  }
+  return value;
+};
+
+const getSignature = (value) => JSON.stringify(sortObject(value));
+
 const uploadFile = async (fileName) => {
   const filePath = path.join(dataDir, `${fileName}.json`);
   if (!fs.existsSync(filePath)) {
@@ -28,6 +45,10 @@ const uploadFile = async (fileName) => {
 
   const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   const collectionRef = db.collection(fileName);
+  const existingSnapshot = await collectionRef.get();
+  const existingSignatures = new Set(
+    existingSnapshot.docs.map((doc) => getSignature(doc.data()))
+  );
 
   console.log(`Uploading data for ${fileName}...`);
 
@@ -35,17 +56,38 @@ const uploadFile = async (fileName) => {
   if (Array.isArray(data)) {
     // If the data is an array: add each item as a separate document
     const batch = db.batch();
+    let newDocsCount = 0;
+
     data.forEach(item => {
+      const signature = getSignature(item);
+      if (existingSignatures.has(signature)) {
+        console.log(`Skipping duplicate document in ${fileName}: ${signature}`);
+        return;
+      }
+
       const docRef = collectionRef.doc(); // Create a document with an automatic ID
       batch.set(docRef, item);
+      existingSignatures.add(signature);
+      newDocsCount += 1;
     });
-    await batch.commit();
-    console.log(`Successfully uploaded ${data.length} documents to ${fileName} collection.`);
+
+    if (newDocsCount > 0) {
+      await batch.commit();
+      console.log(`Successfully uploaded ${newDocsCount} new documents to ${fileName} collection.`);
+    } else {
+      console.log(`No new documents to upload for ${fileName}.`);
+    }
   } else {
     // If the data is an object: add as a single document (document ID is set to be the same as the collection name)
     const docRef = collectionRef.doc(fileName);
-    await docRef.set(data);
-    console.log(`Successfully uploaded single document to ${fileName} collection with ID '${fileName}'.`);
+    const signature = getSignature(data);
+
+    if (existingSignatures.has(signature)) {
+      console.log(`Skipping ${fileName} document upload because identical data already exists.`);
+    } else {
+      await docRef.set(data);
+      console.log(`Successfully uploaded single document to ${fileName} collection with ID '${fileName}'.`);
+    }
   }
 };
 

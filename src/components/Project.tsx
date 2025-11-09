@@ -32,58 +32,42 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="container" id="project">
-      <h1 className="font-weight-bold" style={{ textAlign: 'center' }}>Projects</h1>
-      <hr className="divider" />
-      {/* Add a flex container that wraps the entire project */}
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap", // Wrap to the next line if elements overflow the space
-          justifyContent: "center", // Center horizontally
-          gap: "2rem", // Gap between each project item
-        }}
-      >
-        {projectList.map((project) => (
-          // Style each project item
+    <div className="container projects-section" id="project">
+      <h2 className="section-heading">Projects</h2>
+      <div className="projects-grid">
+        {projectList.map((project, projectIndex) => (
           <div
-            key={project.id} // Use Firestore document id as key
-            style={{
-              flex: "1 1 45%", // Set width to display two items per row (max 45%)
-              maxWidth: "45%", // Prevent width from exceeding 45%
-              border: "1px solid #eee",
-              borderRadius: "8px",
-              padding: "1.5rem",
-              boxShadow: "0 4px 8px rgba(0,0,0,0.05)",
-              display: "flex",
-              flexDirection: "column",
-            }}
+            key={project.id ?? `${project.title}-${projectIndex}`}
+            className="project-card"
           >
-            <h3 style={{ marginBottom: "1rem" }}>{project.title}</h3>
-            {/* Set the p tag to occupy all remaining space */}
-            <p style={{ flexGrow: 1 }}>{project.description}</p>
-            
+            <h3 className="project-card__title">{project.title}</h3>
+            <p className="project-card__description">{project.description}</p>
+
             {project.tech && project.tech.length > 0 && (
-              <div style={{ marginBottom: "1rem" }}>
+              <div className="project-card__badges">
                 {project.tech.map((tech: string, i: number) => (
-                  <Badge color="primary" key={i} style={{ marginRight: "0.5rem" }}>
+                  <Badge
+                    color="primary"
+                    key={`${project.title}-${tech}-${i}`}
+                    className="project-card__badge"
+                  >
                     {tech}
                   </Badge>
                 ))}
               </div>
             )}
-            
+
             {project.url && (
               <Button
                 color="secondary"
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="project-card__action"
               >
                 <FontAwesomeIcon icon={faGithub} /> View on GitHub
               </Button>
             )}
-            {/* Remove individual separators as they are not needed in a grid layout. */}
           </div>
         ))}
       </div>

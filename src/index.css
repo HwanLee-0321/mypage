@@ -7,6 +7,34 @@
     font-style: normal;
 }
 
+:root {
+  --bg-primary: #05070d;
+  --bg-secondary: #0f1320;
+  --bg-accent: #151a2b;
+  --surface-glass: rgba(21, 26, 43, 0.78);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface-highlight: rgba(114, 137, 218, 0.18);
+  --text-primary: #f8fbff;
+  --text-secondary: #b7c2d8;
+  --accent: #8f80ff;
+  --accent-strong: #48c6ef;
+  --accent-gradient: linear-gradient(135deg, #8f80ff 0%, #48c6ef 50%, #6ee7b7 100%);
+}
+
+[data-theme='light'] {
+  --bg-primary: #f5f7fb;
+  --bg-secondary: #ffffff;
+  --bg-accent: #eef2ff;
+  --surface-glass: rgba(255, 255, 255, 0.85);
+  --surface-border: rgba(15, 19, 32, 0.08);
+  --surface-highlight: rgba(143, 128, 255, 0.12);
+  --text-primary: #111322;
+  --text-secondary: #4b5567;
+  --accent: #6f5bff;
+  --accent-strong: #1e90ff;
+  --accent-gradient: linear-gradient(135deg, #6f5bff 0%, #1e90ff 50%, #1abc9c 100%);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -15,23 +43,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212 !important;
-  color: #ffffff !important;
+  min-height: 100vh;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  background-image:
+    radial-gradient(120% 140% at 15% 10%, rgba(142, 121, 255, 0.12), transparent 50%),
+    radial-gradient(120% 140% at 85% 0%, rgba(72, 198, 239, 0.1), transparent 55%),
+    radial-gradient(150% 180% at 50% 100%, rgba(110, 231, 183, 0.08), transparent 60%);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0, transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.03) 0, transparent 40%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.card {
-  background-color: #1e1e1e !important;
-  border: 1px solid #2e2e2e !important;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
