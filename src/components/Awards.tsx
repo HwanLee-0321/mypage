@@ -1,54 +1,72 @@
 import React, { useState, useEffect } from "react";
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { getData } from "../utils/dataExtractor";
+import { useTranslation } from "react-i18next";
+import { getLocalizedText } from "../utils/localization";
 
 interface Award {
-  id?: string; // Add id for React key
-  title: string;
-  award: string;
+  id?: string;
+  title: any;
+  award: any;
   date: string;
-  description: string;
+  description: any;
   file: string;
 }
 
 export const Awards = () => {
   const [awards, setAwards] = useState<Award[]>([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData("awards");
       if (data) {
-        setAwards(data as Award[]);
+        const awardsData = data as Award[];
+        // Filter out duplicates based on title
+        const uniqueAwards = awardsData.reduce((acc: Award[], current: Award) => {
+          const x = acc.find(item => JSON.stringify(item.title) === JSON.stringify(current.title));
+          if (!x) {
+            return acc.concat([current]);
+          } else {
+            return acc;
+          }
+        }, []);
+        setAwards(uniqueAwards);
       }
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []);
 
   if (awards.length === 0) {
-    return null; // Or a loading indicator
+    return null;
   }
 
   return (
     <div>
-      <h2>Awards</h2>
+      <h2>{t('awards')}</h2>
       <Row>
         {awards.map((award) => (
           <Col md={12} key={award.id}>
             <Card className="mb-4 award-card">
               <Card.Body>
-                <Card.Title className="award-title">{award.title}</Card.Title>
+                <Card.Title className="award-title">
+                  {getLocalizedText(award.title, i18n.language)}
+                </Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                  {award.award} | {award.date}
+                  {getLocalizedText(award.award, i18n.language)} | {award.date}
                 </Card.Subtitle>
-                <Card.Text>{award.description}</Card.Text>
+                <Card.Text>
+                  {getLocalizedText(award.description, i18n.language)}
+                </Card.Text>
                 <Button
                   as="a"
                   href={`/awards/${award.file}`}
                   download
                   variant="primary"
+                  size="sm"
                 >
-                  Download Certificate
+                  {t('download_certificate')}
                 </Button>
               </Card.Body>
             </Card>

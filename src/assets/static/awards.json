@@ -1,0 +1,187 @@
+[
+  {
+    "title": {
+      "ko": "2025 오픈소스 아이디어 경진대회 상장(동상)",
+      "en": "2025 Open Source Idea Competition Award (Bronze)",
+      "ja": "2025年オープンソースアイデアコンテスト賞（銅賞）",
+      "zh": "2025年开源创意大赛奖（铜奖）",
+      "de": "2025 Open Source Ideenwettbewerb Auszeichnung (Bronze)",
+      "es": "Premio del Concurso de Ideas de Código Abierto 2025 (Bronce)",
+      "ar": "جائزة مسابقة أفكار المصدر المفتوح 2025 (برونزية)",
+      "it": "Premio Concorso Idee Open Source 2025 (Bronzo)",
+      "fr": "Prix du concours d'idées Open Source 2025 (Bronze)"
+    },
+    "award": {
+      "ko": "동상",
+      "en": "Bronze Award",
+      "ja": "銅賞",
+      "zh": "铜奖",
+      "de": "Bronze-Auszeichnung",
+      "es": "Premio de Bronce",
+      "ar": "الجائزة البرونزية",
+      "it": "Premio di Bronzo",
+      "fr": "Prix de Bronze"
+    },
+    "date": "2025-11-15",
+    "description": {
+      "ko": "조선대학교 차세대 보안 연구실 학부 연구 활동 증명서",
+      "en": "Certificate of Undergraduate Research Activity at Chosun University Next Generation Security Lab",
+      "ja": "朝鮮大学校次世代セキュリティ研究室学部研究活動証明書",
+      "zh": "朝鲜大学下一代安全实验室本科研究活动证书",
+      "de": "Zertifikat über Forschungsaktivitäten im Grundstudium am Next Generation Security Lab der Chosun University",
+      "es": "Certificado de Actividad de Investigación de Pregrado en el Laboratorio de Seguridad de Próxima Generación de la Universidad de Chosun",
+      "ar": "شهادة نشاط البحث الجامعي في مختبر الأمن للجيل القادم بجامعة تشوسون",
+      "it": "Certificato di Attività di Ricerca Universitaria presso il Laboratorio di Sicurezza di Nuova Generazione dell'Università di Chosun",
+      "fr": "Certificat d'activité de recherche de premier cycle au laboratoire de sécurité de nouvelle génération de l'Université Chosun"
+    },
+    "file": "2025 오픈소스 아이디어 경진대회 상장(동상).pdf"
+  },
+  {
+    "title": {
+      "ko": "DX (경험적 경험) AI 실무 역량 강화 부트캠프 과정",
+      "en": "DX (Empirical Experience) AI Practical Competency Enhancement Bootcamp Course",
+      "ja": "DX（経験的体験）AI実践能力強化ブートキャンプコース",
+      "zh": "DX（经验体验）AI实战能力强化训练营课程",
+      "de": "DX (Empirische Erfahrung) AI Praxiskompetenz-Verbesserungs-Bootcamp-Kurs",
+      "es": "Curso Bootcamp de Mejora de Competencias Prácticas de IA DX (Experiencia Empírica)",
+      "ar": "دورة معسكر تعزيز الكفاءة العملية للذكاء الاصطناعي DX (التجربة التجريبية)",
+      "it": "Corso Bootcamp di Potenziamento delle Competenze Pratiche AI DX (Esperienza Empirica)",
+      "fr": "Cours Bootcamp d'amélioration des compétences pratiques en IA DX (Expérience empirique)"
+    },
+    "award": {
+      "ko": "우수상",
+      "en": "Excellence Award",
+      "ja": "優秀賞",
+      "zh": "优秀奖",
+      "de": "Exzellenzpreis",
+      "es": "Premio a la Excelencia",
+      "ar": "جائزة التميز",
+      "it": "Premio di Eccellenza",
+      "fr": "Prix d'Excellence"
+    },
+    "date": "2025-08-29",
+    "description": {
+      "ko": "노인 복약 관리 앱",
+      "en": "Elderly Medication Management App",
+      "ja": "高齢者服薬管理アプリ",
+      "zh": "老年人用药管理应用程序",
+      "de": "App zur Medikamentenverwaltung für ältere Menschen",
+      "es": "Aplicación de gestión de medicamentos para ancianos",
+      "ar": "تطبيق إدارة الأدوية لكبار السن",
+      "it": "App per la gestione dei farmaci per anziani",
+      "fr": "Application de gestion des médicaments pour les personnes âgées"
+    },
+    "file": "이재환_DX_우수상.jpg"
+  },
+  {
+    "title": {
+      "ko": "DX (경험적 경험) AI 실무 역량 강화 부트캠프 과정",
+      "en": "DX (Empirical Experience) AI Practical Competency Enhancement Bootcamp Course",
+      "ja": "DX（経験的体験）AI実践能力強化ブートキャンプコース",
+      "zh": "DX（经验体验）AI实战能力强化训练营课程",
+      "de": "DX (Empirische Erfahrung) AI Praxiskompetenz-Verbesserungs-Bootcamp-Kurs",
+      "es": "Curso Bootcamp de Mejora de Competencias Prácticas de IA DX (Experiencia Empírica)",
+      "ar": "دورة معسكر تعزيز الكفاءة العملية للذكاء الاصطناعي DX (التجربة التجريبية)",
+      "it": "Corso Bootcamp di Potenziamento delle Competenze Pratiche AI DX (Esperienza Empirica)",
+      "fr": "Cours Bootcamp d'amélioration des compétences pratiques en IA DX (Expérience empirique)"
+    },
+    "award": {
+      "ko": "수료증",
+      "en": "Certificate of Completion",
+      "ja": "修了証",
+      "zh": "结业证书",
+      "de": "Abschlusszertifikat",
+      "es": "Certificado de Finalización",
+      "ar": "شهادة إتمام",
+      "it": "Certificato di Completamento",
+      "fr": "Certificat d'achèvement"
+    },
+    "date": "2025-08-29",
+    "description": {
+      "ko": "프로젝트 수료증",
+      "en": "Certificate for Project Completion",
+      "ja": "プロジェクト修了証",
+      "zh": "项目结业证书",
+      "de": "Zertifikat für den Projektabschluss",
+      "es": "Certificado de Finalización del Proyecto",
+      "ar": "شهادة إتمام المشروع",
+      "it": "Certificato di Completamento del Progetto",
+      "fr": "Certificat d'achèvement du projet"
+    },
+    "file": "이재환_DX_수료증.jpg"
+  },
+  {
+    "title": {
+      "ko": "주가 예측 모델",
+      "en": "Stock Price Prediction Model",
+      "ja": "株価予測モデル",
+      "zh": "股价预测模型",
+      "de": "Aktienkurs-Vorhersagemodell",
+      "es": "Modelo de Predicción de Precios de Acciones",
+      "ar": "نموذج التنبؤ بأسعار الأسهم",
+      "it": "Modello di Previsione dei Prezzi delle Azioni",
+      "fr": "Modèle de prévision des prix des actions"
+    },
+    "award": {
+      "ko": "우수상",
+      "en": "Excellence Award",
+      "ja": "優秀賞",
+      "zh": "优秀奖",
+      "de": "Exzellenzpreis",
+      "es": "Premio a la Excelencia",
+      "ar": "جائزة التميز",
+      "it": "Premio di Eccellenza",
+      "fr": "Prix d'Excellence"
+    },
+    "date": "2025-08-17",
+    "description": {
+      "ko": "LSTM을 이용한 효율적인 주가 예측 모델 개발",
+      "en": "Developing an Efficient Stock Price Prediction Model Using LSTM",
+      "ja": "LSTMを使用した効率的な株価予測モデルの開発",
+      "zh": "使用LSTM开发高效的股价预测模型",
+      "de": "Entwicklung eines effizienten Aktienkurs-Vorhersagemodells unter Verwendung von LSTM",
+      "es": "Desarrollo de un modelo eficiente de predicción de precios de acciones utilizando LSTM",
+      "ar": "تطوير نموذج فعال للتنبؤ بأسعار الأسهم باستخدام LSTM",
+      "it": "Sviluppo di un modello efficiente di previsione dei prezzi delle azioni utilizzando LSTM",
+      "fr": "Développement d'un modèle efficace de prévision des prix des actions utilisant LSTM"
+    },
+    "file": "이재환_주가예측상.pdf"
+  },
+  {
+    "title": {
+      "ko": "PCCE",
+      "en": "PCCE",
+      "ja": "PCCE",
+      "zh": "PCCE",
+      "de": "PCCE",
+      "es": "PCCE",
+      "ar": "PCCE",
+      "it": "PCCE",
+      "fr": "PCCE"
+    },
+    "award": {
+      "ko": "LV.2",
+      "en": "LV.2",
+      "ja": "LV.2",
+      "zh": "LV.2",
+      "de": "LV.2",
+      "es": "Nivel 2",
+      "ar": "المستوى 2",
+      "it": "Livello 2",
+      "fr": "Niveau 2"
+    },
+    "date": "2025-05-17",
+    "description": {
+      "ko": "프로그래밍 테스트",
+      "en": "Programming Test",
+      "ja": "プログラミングテスト",
+      "zh": "编程测试",
+      "de": "Programmiertest",
+      "es": "Prueba de Programación",
+      "ar": "اختبار البرمجة",
+      "it": "Test di Programmazione",
+      "fr": "Test de programmation"
+    },
+    "file": "이재환_PCCE.pdf"
+  }
+]

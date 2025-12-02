@@ -1,28 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Card } from 'react-bootstrap';
 import { getData } from '../utils/dataExtractor'; // Import getData
+import { useTranslation } from 'react-i18next';
+import { getLocalizedText } from "../utils/localization";
 
 interface Skill {
   name: string;
   color: string;
 }
 
-interface SkillsData {
-  [category: string]: Skill[];
+interface SkillCategory {
+  category: any;
+  items: Skill[];
 }
 
 const Skills = () => {
-  const [skills, setSkills] = useState<SkillsData>({});
+  const [skills, setSkills] = useState<SkillCategory[]>([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData("skills");
-      // The data for 'skills' is a single document in an array
+      // The data for 'skills' is now an array of SkillCategory objects
       if (data && data.length > 0) {
-        // Remove the 'id' field before setting the state
-        const skillsObject = { ...data[0] };
-        delete (skillsObject as any).id;
-        setSkills(skillsObject as unknown as SkillsData);
+        // Filter out any data that doesn't match the expected structure (e.g. old data)
+        const validSkills = data.filter((item: any) => item && Array.isArray(item.items)) as unknown as SkillCategory[];
+        setSkills(validSkills);
       }
     };
 
@@ -64,16 +67,17 @@ const Skills = () => {
 
   return (
     <div style={containerStyle}>
-      <h2 style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2rem' }}>Skills</h2>
+      <h2 style={{ textAlign: 'center', fontWeight: 'bold', marginBottom: '2rem' }}>{t('skills')}</h2>
       <Row>
-        {Object.entries(skills).map(([category, skillList]) => (
-          // Changed the md property of Col to 6 to display two items per row
-          <Col key={category} xs={12} md={6} className="mb-4">
+        {skills.map((skillCategory, index) => (
+          <Col key={index} xs={12} md={6} className="mb-4">
             <Card style={cardStyle}>
               <Card.Body>
-                <Card.Title style={categoryTitleStyle}>{category}</Card.Title>
+                <Card.Title style={categoryTitleStyle}>
+                  {getLocalizedText(skillCategory.category, i18n.language)}
+                </Card.Title>
                 <div>
-                  {skillList.map((skill) => (
+                  {skillCategory.items.map((skill) => (
                     <span key={skill.name} style={getBadgeStyle(skill.color)}>
                       {skill.name}
                     </span>

@@ -1,0 +1,18 @@
+{
+    "awards": "الجوائز",
+    "certifications": "الشهادات",
+    "education": "التعليم",
+    "experience": "الخبرة",
+    "about": "عني",
+    "skills": "المهارات",
+    "projects": "المشاريع",
+    "velog": "Velog",
+    "download_certificate": "تحميل الشهادة",
+    "profile_summary": "ملخص الملف الشخصي",
+    "contact": "اتصل",
+    "footer_text": "© 2025 HwanLee. جميع الحقوق محفوظة.",
+    "velog_posts": "My Velog Posts",
+    "no_recent_posts": "No recent posts.",
+    "reload": "Reload",
+    "velog_error": "Failed to load Velog feed. Please try again later."
+}

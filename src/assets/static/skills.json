@@ -1,0 +1,122 @@
+[
+  {
+    "category": {
+      "ko": "언어",
+      "en": "Language",
+      "ja": "言語",
+      "zh": "语言",
+      "de": "Sprache",
+      "es": "Idioma",
+      "ar": "لغة",
+      "it": "Lingua",
+      "fr": "Langue"
+    },
+    "items": [
+      {
+        "name": "TypeScript",
+        "color": "#3178C6"
+      },
+      {
+        "name": "Java",
+        "color": "#FFA500"
+      },
+      {
+        "name": "C/C++",
+        "color": "#00599C"
+      },
+      {
+        "name": "JavaScript",
+        "color": "#F7DF1E"
+      },
+      {
+        "name": "Python",
+        "color": "#3776AB"
+      }
+    ]
+  },
+  {
+    "category": {
+      "ko": "프론트엔드",
+      "en": "Frontend",
+      "ja": "フロントエンド",
+      "zh": "前端",
+      "de": "Frontend",
+      "es": "Frontend",
+      "ar": "الواجهة الأمامية",
+      "it": "Frontend",
+      "fr": "Frontend"
+    },
+    "items": [
+      {
+        "name": "Next.js (React)",
+        "color": "#000000"
+      },
+      {
+        "name": "React-Query",
+        "color": "#FF4154"
+      },
+      {
+        "name": "React-Hook-Form",
+        "color": "#EC5990"
+      }
+    ]
+  },
+  {
+    "category": {
+      "ko": "백엔드",
+      "en": "Backend",
+      "ja": "バックエンド",
+      "zh": "后端",
+      "de": "Backend",
+      "es": "Backend",
+      "ar": "الواجهة الخلفية",
+      "it": "Backend",
+      "fr": "Backend"
+    },
+    "items": [
+      {
+        "name": "Django",
+        "color": "#092E20"
+      },
+      {
+        "name": "Firebase",
+        "color": "#FFCA28"
+      },
+      {
+        "name": "Supabase",
+        "color": "#3ECF8E"
+      }
+    ]
+  },
+  {
+    "category": {
+      "ko": "데브옵스",
+      "en": "DevOps",
+      "ja": "DevOps",
+      "zh": "DevOps",
+      "de": "DevOps",
+      "es": "DevOps",
+      "ar": "DevOps",
+      "it": "DevOps",
+      "fr": "DevOps"
+    },
+    "items": [
+      {
+        "name": "AWS",
+        "color": "#FF9900"
+      },
+      {
+        "name": "Vercel",
+        "color": "#000000"
+      },
+      {
+        "name": "Docker",
+        "color": "#2496ED"
+      },
+      {
+        "name": "Git/GitHub",
+        "color": "#000000"
+      }
+    ]
+  }
+]

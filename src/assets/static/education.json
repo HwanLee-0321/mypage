@@ -1,0 +1,44 @@
+[
+  {
+    "studies": [
+      {
+        "institute": {
+          "ko": "조선대학교",
+          "en": "Chosun University",
+          "ja": "朝鮮大学校",
+          "zh": "朝鲜大学",
+          "de": "Chosun Universität",
+          "es": "Universidad de Chosun",
+          "ar": "جامعة تشوسون",
+          "it": "Università di Chosun",
+          "fr": "Université Chosun"
+        },
+        "title": {
+          "ko": "AI소프트웨어학부(컴퓨터공학전공)",
+          "en": "Dept. of AI Software (Computer Engineering)",
+          "ja": "AIソフトウェア学部（コンピュータ工学専攻）",
+          "zh": "AI软件系（计算机工程专业）",
+          "de": "Abteilung für KI-Software (Computertechnik)",
+          "es": "Depto. de Software de IA (Ingeniería Informática)",
+          "ar": "قسم برمجيات الذكاء الاصطناعي (هندسة الكمبيوتر)",
+          "it": "Dip. di Software AI (Ingegneria Informatica)",
+          "fr": "Dép. de logiciels d'IA (Génie informatique)"
+        },
+        "graduationYear": 2026,
+        "durationInYears": {
+          "ko": "4년",
+          "en": "4 years",
+          "ja": "4年",
+          "zh": "4年",
+          "de": "4 Jahre",
+          "es": "4 años",
+          "ar": "4 سنوات",
+          "it": "4 anni",
+          "fr": "4 ans"
+        },
+        "url": "https://www3.chosun.ac.kr/chosun/index.do",
+        "logo": "chosun.png"
+      }
+    ]
+  }
+]

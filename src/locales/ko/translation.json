@@ -1,0 +1,18 @@
+{
+    "awards": "수상 내역",
+    "certifications": "자격증",
+    "education": "학력",
+    "experience": "경력",
+    "about": "소개",
+    "skills": "기술 스택",
+    "projects": "프로젝트",
+    "velog": "Velog",
+    "download_certificate": "증명서 다운로드",
+    "profile_summary": "프로필 요약",
+    "contact": "연락처",
+    "footer_text": "© 2025 이재환. All rights reserved.",
+    "velog_posts": "나의 Velog 게시물",
+    "no_recent_posts": "최근 게시글이 없습니다.",
+    "reload": "다시 불러오기",
+    "velog_error": "Velog 피드를 불러오지 못했습니다. 잠시 후 다시 시도해주세요."
+}

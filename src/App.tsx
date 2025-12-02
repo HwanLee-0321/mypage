@@ -1,10 +1,12 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import "./App.css";
+import "./i18n"; // Initialize i18n
 
 import { Container, Row, Col } from "react-bootstrap";
 
 import { TopBar } from "./components/TopBar";
 import { ProfileSummary } from "./components/ProfileSummary";
+import { Chatbot } from "./components/Chatbot";
 
 const AwardsSection = lazy(() =>
   import("./components/Awards").then((module) => ({ default: module.Awards }))
@@ -29,6 +31,7 @@ const FooterSection = lazy(() =>
 const SkillsSection = lazy(() => import("./components/Skills"));
 const ProjectsSection = lazy(() => import("./components/Project"));
 const VelogSidebarSection = lazy(() => import("./components/VelogSidebar"));
+const SimpleGameSection = lazy(() => import("./components/SimpleGame"));
 
 type ThemeMode = "dark" | "light";
 
@@ -114,9 +117,14 @@ export const App = () => {
         <AboutSection />
       </Suspense>
 
+      <Suspense fallback={<SectionFallback minHeight={400} />}>
+        {/* <SimpleGameSection /> */}
+      </Suspense>
+
       <Suspense fallback={<SectionFallback minHeight={160} />}>
         <FooterSection />
       </Suspense>
+      <Chatbot />
     </div>
   );
 };

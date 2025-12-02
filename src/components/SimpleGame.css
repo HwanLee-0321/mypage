@@ -1,0 +1,116 @@
+.simple-game-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #1a1f2e, #0c0f19);
+    border-radius: 1.5rem;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.simple-game-container::before {
+    content: "ARCADE MODE";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0c0f19;
+    padding: 0 20px;
+    color: #48c6ef;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 1px solid rgba(72, 198, 239, 0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.simple-game-canvas {
+    background: #000;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: none;
+    /* Hide default cursor */
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: 0 0 20px rgba(72, 198, 239, 0.1);
+}
+
+.game-ui {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0 1rem;
+}
+
+.game-score {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #48c6ef;
+    text-shadow: 0 0 10px rgba(72, 198, 239, 0.5);
+}
+
+.game-controls-hint {
+    font-size: 0.9rem;
+    color: #888;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+
+.game-over-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(12, 15, 25, 0.95);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(72, 198, 239, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    min-width: 300px;
+}
+
+.game-over-title {
+    font-size: 2.5rem;
+    color: #ff5f56;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 95, 86, 0.4);
+}
+
+.restart-button {
+    background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%);
+    border: none;
+    padding: 1rem 2.5rem;
+    color: white;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(72, 198, 239, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.restart-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(72, 198, 239, 0.6);
+}
+
+.restart-button:active {
+    transform: translateY(1px);
+}

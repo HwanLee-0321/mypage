@@ -1,0 +1,18 @@
+{
+    "awards": "Awards",
+    "certifications": "Certifications",
+    "education": "Education",
+    "experience": "Experience",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "velog": "Velog",
+    "download_certificate": "Download Certificate",
+    "profile_summary": "Profile Summary",
+    "contact": "Contact",
+    "footer_text": "© 2025 HwanLee. All rights reserved.",
+    "velog_posts": "My Velog Posts",
+    "no_recent_posts": "No recent posts.",
+    "reload": "Reload",
+    "velog_error": "Failed to load Velog feed. Please try again later."
+}

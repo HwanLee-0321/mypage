@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Navbar, NavbarBrand } from "react-bootstrap";
 import { Image } from "../utils/Image";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface TopBarProps {
   theme: "dark" | "light";
@@ -23,18 +24,21 @@ export const TopBar = ({ theme, onToggleTheme }: TopBarProps) => {
           />
           <strong>@HwanLee</strong>
         </NavbarBrand>
-        <button
-          type="button"
-          className="theme-toggle"
-          onClick={onToggleTheme}
-          aria-pressed={isLight}
-          aria-label="Toggle light / dark theme"
-        >
-          <span className="theme-toggle__icon" role="img" aria-hidden="true">
-            {isLight ? "🌙" : "☀️"}
-          </span>
-          <span className="theme-toggle__label">{isLight ? "Dark" : "Light"} Mode</span>
-        </button>
+        <div className="d-flex align-items-center">
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-pressed={isLight}
+            aria-label="Toggle light / dark theme"
+          >
+            <span className="theme-toggle__icon" role="img" aria-hidden="true">
+              {isLight ? "🌙" : "☀️"}
+            </span>
+            <span className="theme-toggle__label">{isLight ? "Dark" : "Light"} Mode</span>
+          </button>
+          <LanguageSwitcher />
+        </div>
       </Container>
     </Navbar>
   );

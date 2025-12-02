@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ListGroup, Spinner, Button } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
 // Define the Velog post data type.
 interface Post {
@@ -13,6 +14,7 @@ export const VelogSidebar = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const VELOG_CACHE_KEY = 'velog_posts_cache';
   const VELOG_CACHE_TTL = 1000 * 60 * 10; // 10 minutes
@@ -115,7 +117,7 @@ export const VelogSidebar = () => {
       persistPostsToCache(limitedPosts);
     } catch (error) {
       console.error('Velog RSS fetch error:', error);
-      setErrorMessage('Velog 피드를 불러오지 못했습니다. 잠시 후 다시 시도해주세요.');
+      setErrorMessage(t('velog_error'));
       setPosts([]);
     } finally {
       setIsLoading(false);
@@ -135,7 +137,7 @@ export const VelogSidebar = () => {
 
   return (
     <div className="velog-sidebar">
-      <h4>My Velog Posts</h4>
+      <h4>{t('velog_posts')}</h4>
       {isLoading ? (
         <div className="text-center" style={{ padding: '1rem 0' }}>
           <Spinner animation="border" role="status" variant="light" />
@@ -161,14 +163,14 @@ export const VelogSidebar = () => {
         </ListGroup>
       ) : (
         <div className="text-center text-muted" style={{ padding: '1rem 0' }}>
-          최근 게시글이 없습니다.
+          {t('no_recent_posts')}
         </div>
       )}
       {errorMessage && (
         <div className="text-center mt-3">
           <p className="text-muted small mb-2">{errorMessage}</p>
           <Button variant="outline-light" size="sm" onClick={fetchVelogPosts}>
-            다시 불러오기
+            {t('reload')}
           </Button>
         </div>
       )}

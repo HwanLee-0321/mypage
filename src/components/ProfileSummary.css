@@ -20,7 +20,7 @@
   z-index: 0;
 }
 
-.terminal-window > * {
+.terminal-window>* {
   position: relative;
   z-index: 1;
 }
@@ -46,9 +46,17 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.red { background-color: #ff5f56; }
-.yellow { background-color: #ffbd2e; }
-.green { background-color: #27c93f; }
+.red {
+  background-color: #ff5f56;
+}
+
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
 
 .terminal-title {
   color: rgba(255, 255, 255, 0.6);
@@ -65,11 +73,24 @@
   color: #f8fbff;
   font-family: 'SF Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
   padding: 1.75rem;
-  font-size: 2rem;
+  font-size: 1.1rem;
   white-space: pre-wrap;
   word-break: break-all;
   z-index: 1;
   position: relative;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  width: 80%;
 }
 
 .terminal-body::before {
@@ -94,9 +115,12 @@
 }
 
 @keyframes blink {
-  from, to {
+
+  from,
+  to {
     color: transparent;
   }
+
   50% {
     color: #f8fbff;
   }

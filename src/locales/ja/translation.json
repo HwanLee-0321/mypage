@@ -1,0 +1,18 @@
+{
+    "awards": "受賞歴",
+    "certifications": "資格",
+    "education": "学歴",
+    "experience": "職歴",
+    "about": "自己紹介",
+    "skills": "スキル",
+    "projects": "プロジェクト",
+    "velog": "Velog",
+    "download_certificate": "証明書をダウンロード",
+    "profile_summary": "プロフィール概要",
+    "contact": "連絡先",
+    "footer_text": "© 2025 HwanLee. All rights reserved.",
+    "velog_posts": "My Velog Posts",
+    "no_recent_posts": "No recent posts.",
+    "reload": "Reload",
+    "velog_error": "Failed to load Velog feed. Please try again later."
+}

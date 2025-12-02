@@ -3,19 +3,21 @@ import moment from "moment";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { getData } from "../utils/dataExtractor";
 import { Image } from "../utils/Image";
+import { useTranslation } from "react-i18next";
+import { getLocalizedText } from "../utils/localization";
 
 // Define interfaces for the data structure
 interface Role {
-  title: string;
+  title: any;
   startDate: string;
   endDate: string;
   Present: boolean;
-  location: string;
+  location: any;
 }
 
 interface ExperienceData {
   id: string;
-  companyName: string;
+  companyName: any;
   url: string;
   logo: string;
   roles: Role[];
@@ -38,6 +40,7 @@ const getDuration = (duration: number) => {
 
 export const Experience = () => {
   const [experiences, setExperiences] = useState<ExperienceData[]>([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,7 +59,7 @@ export const Experience = () => {
 
   return (
     <Container>
-      <h2>Experience</h2>
+      <h2>{t('experience')}</h2>
       <Row>
         {experiences.map((experience) => {
           moment.locale("en");
@@ -74,12 +77,12 @@ export const Experience = () => {
                 <Card.Body>
                   <Row className="align-items-center">
                     <Col xs={3} className="text-center">
-                      <Image name={experience.logo} alt={experience.companyName} className="card-img-top" />
+                      <Image name={experience.logo} alt={getLocalizedText(experience.companyName, i18n.language)} className="card-img-top" />
                     </Col>
                     <Col xs={9}>
                       <Card.Title>
                         <a href={experience.url} target="_blank" rel="noopener noreferrer">
-                          {experience.companyName}
+                          {getLocalizedText(experience.companyName, i18n.language)}
                         </a>
                       </Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">{getDuration(totalDuration)}</Card.Subtitle>
@@ -93,12 +96,12 @@ export const Experience = () => {
 
                     return (
                       <div key={j} className="mb-3">
-                        <h6 className="mb-0">{role.title}</h6>
+                        <h6 className="mb-0">{getLocalizedText(role.title, i18n.language)}</h6>
                         <small className="text-muted">
                           {startDate.format("MMM YYYY")} - {role.Present ? "Present" : timeEnd.format("MMM YYYY")} ({getDuration(duration)})
                         </small>
                         <br />
-                        <small className="text-muted">{role.location}</small>
+                        <small className="text-muted">{getLocalizedText(role.location, i18n.language)}</small>
                       </div>
                     );
                   })}

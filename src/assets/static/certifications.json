@@ -1,0 +1,62 @@
+[
+  {
+    "title": {
+      "ko": "백준 온라인 젓지먼트",
+      "en": "Baekjoon Online Judge",
+      "ja": "Baekjoon Online Judge",
+      "zh": "Baekjoon Online Judge",
+      "de": "Baekjoon Online Judge",
+      "es": "Baekjoon Online Judge",
+      "ar": "Baekjoon Online Judge",
+      "it": "Baekjoon Online Judge",
+      "fr": "Baekjoon Online Judge"
+    },
+    "verificationLink": "https://www.acmicpc.net/user/ghksdl0321",
+    "logo": "boj.png"
+  },
+  {
+    "title": {
+      "ko": "드림핵 온라인 해킹 서비스 시스템",
+      "en": "Dreamhack Online Hacking Service System",
+      "ja": "Dreamhackオンラインハッキングサービスシステム",
+      "zh": "Dreamhack在线黑客服务系统",
+      "de": "Dreamhack Online Hacking Service System",
+      "es": "Sistema de Servicio de Hacking en Línea Dreamhack",
+      "ar": "نظام خدمة القرصنة عبر الإنترنت Dreamhack",
+      "it": "Sistema di Servizio di Hacking Online Dreamhack",
+      "fr": "Système de service de piratage en ligne Dreamhack"
+    },
+    "verificationLink": "https://www.icqa.or.kr/cn/",
+    "logo": "dhack.png"
+  },
+  {
+    "title": {
+      "ko": "PCCE",
+      "en": "PCCE",
+      "ja": "PCCE",
+      "zh": "PCCE",
+      "de": "PCCE",
+      "es": "PCCE",
+      "ar": "PCCE",
+      "it": "PCCE",
+      "fr": "PCCE"
+    },
+    "verificationLink": "https://www.icqa.or.kr/cn/",
+    "logo": "pcce.png"
+  },
+  {
+    "title": {
+      "ko": "TOPCIT",
+      "en": "TOPCIT",
+      "ja": "TOPCIT",
+      "zh": "TOPCIT",
+      "de": "TOPCIT",
+      "es": "TOPCIT",
+      "ar": "TOPCIT",
+      "it": "TOPCIT",
+      "fr": "TOPCIT"
+    },
+    "verificationLink": "https://www.icqa.or.kr/cn/",
+    "logo": "topcit.png"
+  }
+]

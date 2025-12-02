@@ -1,0 +1,131 @@
+[
+  {
+    "companyName": {
+      "ko": "조선대학교 AI NLP 연구실",
+      "en": "Chosun University AI NLP Lab",
+      "ja": "朝鮮大学校 AI NLP 研究室",
+      "zh": "朝鲜大学 AI NLP 实验室",
+      "de": "Chosun Universität AI NLP Labor",
+      "es": "Laboratorio de PNL e IA de la Universidad de Chosun",
+      "ar": "مختبر معالجة اللغات الطبيعية والذكاء الاصطناعي بجامعة تشوسون",
+      "it": "Laboratorio AI NLP dell'Università di Chosun",
+      "fr": "Laboratoire IA NLP de l'Université Chosun"
+    },
+    "logo": "연구실로고.png",
+    "url": "https://www3.chosun.ac.kr/chosun/index.do",
+    "roles": [
+      {
+        "title": {
+          "ko": "학부 연구생",
+          "en": "Undergraduate Researcher",
+          "ja": "学部研究員",
+          "zh": "本科研究员",
+          "de": "Studentische Hilfskraft",
+          "es": "Investigador de Pregrado",
+          "ar": "باحث جامعي",
+          "it": "Ricercatore Universitario",
+          "fr": "Chercheur de premier cycle"
+        },
+        "startDate": "2025-09-01",
+        "endDate": "2025-12-31",
+        "location": {
+          "ko": "광주광역시",
+          "en": "Gwangju Metropolitan City",
+          "ja": "光州広域市",
+          "zh": "光州广域市",
+          "de": "Gwangju Metropolitan City",
+          "es": "Ciudad Metropolitana de Gwangju",
+          "ar": "مدينة غوانغجو الكبرى",
+          "it": "Città Metropolitana di Gwangju",
+          "fr": "Ville métropolitaine de Gwangju"
+        }
+      }
+    ]
+  },
+  {
+    "companyName": {
+      "ko": "조선대학교 해커로그인(KUCIS소속)",
+      "en": "Chosun University HackerLogin (KUCIS)",
+      "ja": "朝鮮大学校 HackerLogin (KUCIS)",
+      "zh": "朝鲜大学 HackerLogin (KUCIS)",
+      "de": "Chosun Universität HackerLogin (KUCIS)",
+      "es": "HackerLogin de la Universidad de Chosun (KUCIS)",
+      "ar": "جامعة تشوسون HackerLogin (KUCIS)",
+      "it": "HackerLogin dell'Università di Chosun (KUCIS)",
+      "fr": "HackerLogin de l'Université Chosun (KUCIS)"
+    },
+    "logo": "ucube.jpg",
+    "url": "https://hackerlogin.com/",
+    "roles": [
+      {
+        "title": {
+          "ko": "부원",
+          "en": "Member",
+          "ja": "部員",
+          "zh": "成员",
+          "de": "Mitglied",
+          "es": "Miembro",
+          "ar": "عضو",
+          "it": "Membro",
+          "fr": "Membre"
+        },
+        "startDate": "2025-03-03",
+        "endDate": "2025-09-01",
+        "location": {
+          "ko": "조선대학교소속 정보보안 동아리",
+          "en": "Information Security Club at Chosun University",
+          "ja": "朝鮮大学校の情報セキュリティサークル",
+          "zh": "朝鲜大学信息安全社团",
+          "de": "Informationssicherheitsclub an der Chosun Universität",
+          "es": "Club de Seguridad de la Información en la Universidad de Chosun",
+          "ar": "نادي أمن المعلومات في جامعة تشوسون",
+          "it": "Club di Sicurezza delle Informazioni all'Università di Chosun",
+          "fr": "Club de sécurité de l'information à l'Université Chosun"
+        }
+      }
+    ]
+  },
+  {
+    "companyName": {
+      "ko": "유큐브",
+      "en": "Ucube",
+      "ja": "Ucube",
+      "zh": "Ucube",
+      "de": "Ucube",
+      "es": "Ucube",
+      "ar": "Ucube",
+      "it": "Ucube",
+      "fr": "Ucube"
+    },
+    "logo": "ucube.jpg",
+    "url": "https://www.u-cube.kr/kr/index.php",
+    "roles": [
+      {
+        "title": {
+          "ko": "주니어 개발자",
+          "en": "Junior Developer",
+          "ja": "ジュニア開発者",
+          "zh": "初级开发人员",
+          "de": "Junior-Entwickler",
+          "es": "Desarrollador Junior",
+          "ar": "مطور مبتدئ",
+          "it": "Sviluppatore Junior",
+          "fr": "Développeur Junior"
+        },
+        "startDate": "2025-05-01",
+        "endDate": "2025-09-01",
+        "location": {
+          "ko": "광주광역시",
+          "en": "Gwangju Metropolitan City",
+          "ja": "光州広域市",
+          "zh": "光州广域市",
+          "de": "Gwangju Metropolitan City",
+          "es": "Ciudad Metropolitana de Gwangju",
+          "ar": "مدينة غوانغجو الكبرى",
+          "it": "Città Metropolitana di Gwangju",
+          "fr": "Ville métropolitaine de Gwangju"
+        }
+      }
+    ]
+  }
+]

@@ -3,12 +3,14 @@ import { getData } from "../utils/dataExtractor"; // Import getData
 import { Badge, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from "react-i18next";
+import { getLocalizedText } from "../utils/localization";
 
 // Define the project data type.
 interface ProjectData {
   id?: string; // Add id for React key
-  title: string;
-  description: string;
+  title: any;
+  description: any;
   url?: string;
   tech?: string[];
   path?: string;
@@ -19,6 +21,7 @@ interface ProjectData {
 
 const Project = () => {
   const [projectList, setProjectList] = useState<ProjectData[]>([]);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,29 +36,17 @@ const Project = () => {
 
   return (
     <div className="container projects-section" id="project">
-      <h2 className="section-heading">Projects</h2>
+      <h2 className="section-heading">{t('projects')}</h2>
       <div className="projects-grid">
         {projectList.map((project, projectIndex) => (
           <div
             key={project.id ?? `${project.title}-${projectIndex}`}
             className="project-card"
           >
-            <h3 className="project-card__title">{project.title}</h3>
-            <p className="project-card__description">{project.description}</p>
+            <h3 className="project-card__title">{getLocalizedText(project.title, i18n.language)}</h3>
+            <p className="project-card__description">{getLocalizedText(project.description, i18n.language)}</p>
 
-            {project.tech && project.tech.length > 0 && (
-              <div className="project-card__badges">
-                {project.tech.map((tech: string, i: number) => (
-                  <Badge
-                    color="primary"
-                    key={`${project.title}-${tech}-${i}`}
-                    className="project-card__badge"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            )}
+
 
             {project.url && (
               <Button

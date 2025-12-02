@@ -20,4 +20,9 @@ serviceAccountKey.json
 .env.production
 
 # Static Data
-/src/assets/static
+
+# Extra Security
+scripts/serviceAccountKey.json
+*.log
+.DS_Store
+Thumbs.db
