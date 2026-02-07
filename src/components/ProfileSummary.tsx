@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Image } from "../utils/Image";
-import SocialIcons from "./SocialIcons";
 import './ProfileSummary.css';
 
 interface HistoryItem {
@@ -230,7 +229,6 @@ export const ProfileSummary = () => {
               )}
             </div>
           </div>
-          <SocialIcons />
         </Col>
       </Row>
     </Container>

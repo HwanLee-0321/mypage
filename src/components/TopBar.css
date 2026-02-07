@@ -1,0 +1,53 @@
+/* TopBar Social Links Styles */
+.social-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem !important;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.social-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.social-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.social-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.social-nav-link:hover .social-icon,
+.social-nav-link:hover .social-icon-img {
+  transform: scale(1.1);
+}
+
+/* Responsive: Hide text on small screens */
+@media (max-width: 991px) {
+  .social-text {
+    display: none;
+  }
+  
+  .social-nav-link {
+    padding: 0.5rem !important;
+  }
+}
+
+/* Theme Toggle spacing adjustment */
+.theme-toggle {
+  margin-left: 0.5rem;
+}

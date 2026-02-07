@@ -1,46 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="color-scheme" content="light dark">
-    <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=()">
-    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' https://*.googleapis.com https://securetoken.googleapis.com https://identitytoolkit.googleapis.com https://firebasestorage.googleapis.com https://v2.velog.io https://api.allorigins.win https://api.codetabs.com ws://localhost:3000 ws://127.0.0.1:3000 wss:; img-src 'self' data: https://firebasestorage.googleapis.com https://fastly.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://fastly.jsdelivr.net; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html lang="ko">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Lee Jae Hwan</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- SEO Meta Tags -->
+  <title>이재환 (Lee Jae Hwan) - SW개발자 | Full Stack Developer Portfolio</title>
+  <meta name="description"
+    content="조선대학교 출신 풀스택 개발자. React, Node.js, TypeScript를 활용한 웹 개발 전문. 프로젝트 포트폴리오와 기술 스택을 확인하세요.">
+  <meta name="keywords"
+    content="이재환, Lee Jae Hwan, hwanlee, 환리, Hwan Lee, 조선대학교 이재환, 개발자 이재환, 이재환 개발자, 이재환 포트폴리오, hwanlee developer, 조선대학교 개발자, 조선대 이재환, software developer, full stack developer, web developer, React developer, Node.js developer, TypeScript developer, Firebase developer, 프론트엔드 개발자, 백엔드 개발자, 풀스택 개발자, 웹 개발자, 리액트 개발자, portfolio, programmer, engineer, 소프트웨어 엔지니어, 프로그래머">
+  <meta name="author" content="이재환 (Lee Jae Hwan)">
+  <link rel="canonical" href="https://yourdomain.com">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:title" content="이재환 (Lee Jae Hwan) - 조선대학교 개발자 포트폴리오">
+  <meta property="og:description" content="조선대학교 출신 풀스택 개발자 이재환입니다. React, Node.js, TypeScript 전문. 프로젝트와 경력을 확인하세요.">
+  <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:site_name" content="이재환 개발자 포트폴리오">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourdomain.com">
+  <meta name="twitter:title" content="이재환 (Lee Jae Hwan) - 조선대학교 개발자">
+  <meta name="twitter:description" content="조선대학교 출신 풀스택 개발자. React, Node.js, TypeScript 전문.">
+  <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg">
+  <meta name="twitter:creator" content="@hwanlee">
+
+  <!-- Additional Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Security Headers -->
+  <meta http-equiv="Permissions-Policy"
+    content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), usb=()">
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; connect-src 'self' https://*.googleapis.com https://securetoken.googleapis.com https://identitytoolkit.googleapis.com https://firebasestorage.googleapis.com https://v2.velog.io https://api.allorigins.win https://api.codetabs.com ws://localhost:3000 ws://127.0.0.1:3000 wss:; img-src 'self' data: https://firebasestorage.googleapis.com https://fastly.jsdelivr.net https://velog.velcdn.com https://www.acmicpc.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com https://fastly.jsdelivr.net; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "이재환",
+      "alternateName": ["Lee Jae Hwan", "hwanlee", "환리", "Hwan Lee", "조선대학교 이재환", "개발자 이재환", "이재환 개발자"],
+      "jobTitle": "풀스택 개발자 (Full Stack Software Developer)",
+      "description": "조선대학교 출신 풀스택 소프트웨어 개발자. React, Node.js, TypeScript, Firebase 등 현대적인 웹 기술을 전문으로 합니다.",
+      "url": "https://yourdomain.com",
+      "email": "ghksdl6026@naver.com",
+      "sameAs": [
+        "https://github.com/hwanlee",
+        "https://scholar.google.com/citations?user=GnqbP2gAAAAJ",
+        "https://velog.io/@hwan_lee",
+        "https://www.linkedin.com/in/hwanlee"
+      ],
+      "knowsAbout": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "JavaScript",
+        "Firebase",
+        "Full Stack Development",
+        "Web Development",
+        "Software Engineering",
+        "프론트엔드 개발",
+        "백엔드 개발",
+        "풀스택 개발",
+        "웹 개발"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "조선대학교",
+        "alternateName": "Chosun University"
+      }
+    }
+  </script>
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+</head>
+
+<body>
+  <noscript>
+    Lee Jae Hwan (이재환) - Software Developer Portfolio. Please enable JavaScript to view this website.
+  </noscript>
+  <div id="root"></div>
+</body>
+
 </html>

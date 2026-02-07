@@ -1,15 +1,35 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Lee Jae Hwan",
+  "name": "Lee Jae Hwan (이재환) - Software Developer Portfolio",
+  "description": "Full Stack Software Developer Portfolio",
   "icons": [
     {
       "src": "profilePic.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "profilePic.ico",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "profilePic.ico",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "lang": "ko",
+  "dir": "ltr",
+  "categories": [
+    "portfolio",
+    "developer",
+    "technology"
+  ]
 }

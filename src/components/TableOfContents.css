@@ -1,0 +1,242 @@
+.table-of-contents {
+    position: fixed;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    min-width: 200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+.toc-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    position: relative;
+}
+
+.toc-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 2px;
+    transition: height 0.2s ease;
+}
+
+.toc-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateX(-3px);
+}
+
+.toc-item:hover::before {
+    height: 70%;
+}
+
+.toc-item.active {
+    background: rgba(102, 126, 234, 0.15);
+    color: #667eea;
+    font-weight: 600;
+}
+
+.toc-item.active::before {
+    height: 100%;
+}
+
+.toc-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.toc-item:hover .toc-icon,
+.toc-item.active .toc-icon {
+    transform: scale(1.2);
+}
+
+.toc-label {
+    flex: 1;
+    white-space: nowrap;
+}
+
+.toc-progress-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+}
+
+.toc-progress-fill {
+    width: 100%;
+    background: linear-gradient(180deg, #667eea, #764ba2);
+    transition: height 0.3s ease;
+    border-radius: 0 15px 0 0;
+}
+
+/* Light Mode */
+[data-theme="light"] .table-of-contents {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .toc-title {
+    color: #5568ea;
+}
+
+[data-theme="light"] .toc-item {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .toc-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="light"] .toc-item.active {
+    background: rgba(85, 104, 234, 0.1);
+    color: #5568ea;
+}
+
+[data-theme="light"] .toc-progress-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .table-of-contents {
+        right: 1rem;
+        min-width: 180px;
+        padding: 0.75rem;
+    }
+
+    .toc-item {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .toc-icon {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .table-of-contents {
+        min-width: 50px;
+        padding: 0.5rem;
+    }
+
+    .toc-title,
+    .toc-label {
+        display: none;
+    }
+
+    .toc-item {
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    .toc-icon {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-of-contents {
+        display: none;
+    }
+}
+
+/* Scroll Animation */
+.toc-item {
+    animation: fadeIn 0.3s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.toc-item:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.toc-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.toc-item:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.toc-item:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.toc-item:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.toc-item:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.toc-item:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.toc-item:nth-child(8) {
+    animation-delay: 0.4s;
+}

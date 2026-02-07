@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import dhackIcon from "../assets/images/dhack.png";
@@ -15,6 +16,15 @@ const SocialIconsComponent = () => (
       aria-label="GitHub"
     >
       <FontAwesomeIcon icon={faGithub} />
+    </a>
+    <a
+      href="https://scholar.google.com/citations?user=GnqbP2gAAAAJ&hl=ko"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Google Scholar"
+      title="Google Scholar Profile"
+    >
+      <FontAwesomeIcon icon={faGraduationCap} />
     </a>
     <a
       href="https://dreamhack.io/users/74674"

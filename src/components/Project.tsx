@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getData } from "../utils/dataExtractor"; // Import getData
-import { Badge, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";

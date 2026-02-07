@@ -1,5 +1,5 @@
 import awards from '../assets/static/awards.json';
-import certifications from '../assets/static/certifications.json';
+// import certifications from '../assets/static/certifications.json'; // Currently unused
 import education from '../assets/static/education.json';
 import experience from '../assets/static/experience.json';
 import projects from '../assets/static/projects.json';

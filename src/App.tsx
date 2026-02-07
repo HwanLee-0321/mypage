@@ -7,6 +7,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { TopBar } from "./components/TopBar";
 import { ProfileSummary } from "./components/ProfileSummary";
 import { Chatbot } from "./components/Chatbot";
+import { SEOHead } from "./components/SEOHead";
+import { TableOfContents } from "./components/TableOfContents";
 
 const AwardsSection = lazy(() =>
   import("./components/Awards").then((module) => ({ default: module.Awards }))
@@ -31,7 +33,12 @@ const FooterSection = lazy(() =>
 const SkillsSection = lazy(() => import("./components/Skills"));
 const ProjectsSection = lazy(() => import("./components/Project"));
 const VelogSidebarSection = lazy(() => import("./components/VelogSidebar"));
-const SimpleGameSection = lazy(() => import("./components/SimpleGame"));
+const ContactSection = lazy(() =>
+  import("./components/Contact").then((module) => ({ default: module.Contact }))
+);
+const ResumeSection = lazy(() =>
+  import("./components/Resume").then((module) => ({ default: module.Resume }))
+);
 
 type ThemeMode = "dark" | "light";
 
@@ -67,8 +74,12 @@ export const App = () => {
 
   return (
     <div className="App">
+      <SEOHead />
+      <TableOfContents />
       <TopBar theme={theme} onToggleTheme={toggleTheme} />
-      <ProfileSummary />
+      <div id="profile">
+        <ProfileSummary />
+      </div>
       <Container>
         <Row>
           {/* Left Sidebar: Awards and Velog */}
@@ -85,27 +96,27 @@ export const App = () => {
           {/* Main Content */}
           <Col md={9} className="main-content">
             <Suspense fallback={<SectionFallback minHeight={260} />}>
-              <Row>
+              <Row id="skills">
                 <SkillsSection />
               </Row>
             </Suspense>
             <Suspense fallback={<SectionFallback minHeight={240} />}>
-              <Row>
+              <Row id="certifications">
                 <CertificationsSection />
               </Row>
             </Suspense>
             <Suspense fallback={<SectionFallback minHeight={320} />}>
-              <Row>
+              <Row id="projects">
                 <ProjectsSection />
               </Row>
             </Suspense>
             <Suspense fallback={<SectionFallback minHeight={300} />}>
-              <Row>
+              <Row id="experience">
                 <ExperienceSection />
               </Row>
             </Suspense>
             <Suspense fallback={<SectionFallback minHeight={260} />}>
-              <Row>
+              <Row id="education">
                 <EducationSection />
               </Row>
             </Suspense>
@@ -113,13 +124,26 @@ export const App = () => {
         </Row>
       </Container>
 
-      <Suspense fallback={<SectionFallback minHeight={200} />}>
-        <AboutSection />
-      </Suspense>
+      <Container>
+        <div id="contact">
+          <Suspense fallback={<SectionFallback minHeight={300} />}>
+            <ContactSection />
+          </Suspense>
+        </div>
+      </Container>
 
-      <Suspense fallback={<SectionFallback minHeight={400} />}>
-        {/* <SimpleGameSection /> */}
-      </Suspense>
+      <div id="about">
+        <Suspense fallback={<SectionFallback minHeight={200} />}>
+          <AboutSection />
+        </Suspense>
+      </div>
+
+      {/* Hidden Resume for PDF Export - positioned off-screen instead of display:none */}
+      <div style={{ position: 'fixed', top: '-99999px', left: '-99999px', width: '900px' }}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ResumeSection />
+        </Suspense>
+      </div>
 
       <Suspense fallback={<SectionFallback minHeight={160} />}>
         <FooterSection />

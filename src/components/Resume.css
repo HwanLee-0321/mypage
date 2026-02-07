@@ -1,0 +1,281 @@
+.resume-container {
+    background: white !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force white background for all resume elements */
+.resume-container * {
+    background-color: transparent;
+}
+
+/* Header */
+.resume-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid #667eea;
+    margin-bottom: 2rem;
+}
+
+.resume-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000000 !important;
+    margin-bottom: 0.5rem;
+}
+
+.resume-korean {
+    font-size: 2rem;
+    color: #333333 !important;
+}
+
+.resume-contact-info {
+    font-size: 0.95rem;
+    color: #000000 !important;
+    margin: 0.5rem 0;
+}
+
+.resume-contact-info span {
+    margin: 0 0.3rem;
+}
+
+.resume-links {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.resume-links a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+
+.resume-links a:hover {
+    text-decoration: underline;
+}
+
+/* Content */
+.resume-content {
+    padding: 0 1rem;
+}
+
+/* Sections */
+.resume-section {
+    margin-bottom: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed #cccccc;
+    page-break-inside: avoid;
+}
+
+.resume-section:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.resume-section-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #000000 !important;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+/* Summary */
+.resume-summary {
+    text-align: justify;
+    line-height: 1.8;
+    color: #000000 !important;
+}
+
+/* Skills */
+.resume-skill-category {
+    margin-bottom: 1rem;
+}
+
+.resume-skill-category-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000000 !important;
+    margin-bottom: 0.6rem;
+}
+
+.resume-skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.resume-skill-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: #f0f0f0 !important;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: #000000 !important;
+}
+
+/* Experience */
+.resume-experience-item {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+}
+
+.resume-company-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #000000 !important;
+    margin-bottom: 0.6rem;
+}
+
+.resume-role {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid #667eea;
+}
+
+.resume-role-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+
+.resume-role-title {
+    font-weight: 700;
+    color: #000000 !important;
+    font-size: 1rem;
+}
+
+.resume-role-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.resume-role-location {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Projects */
+.resume-project-item {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+}
+
+.resume-project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.resume-project-link {
+    font-size: 0.9rem;
+    color: #667eea;
+    text-decoration: none;
+}
+
+.resume-project-link:hover {
+    text-decoration: underline;
+}
+
+.resume-project-description {
+    color: #444;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.resume-project-tech {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Education */
+.resume-education-item {
+    margin-bottom: 1.5rem;
+    page-break-inside: avoid;
+}
+
+.resume-education-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.resume-education-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+
+.resume-education-degree {
+    font-weight: 500;
+    color: #333;
+}
+
+.resume-education-year {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.resume-education-duration {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Print Styles */
+@media print {
+    .resume-container {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .resume-section {
+        page-break-inside: avoid;
+    }
+
+    .resume-section-title {
+        page-break-after: avoid;
+    }
+
+    .resume-links a {
+        color: #000;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 1rem;
+    }
+
+    .resume-name {
+        font-size: 2rem;
+    }
+
+    .resume-korean {
+        font-size: 1.5rem;
+    }
+
+    .resume-role-header {
+        flex-direction: column;
+    }
+
+    .resume-education-details {
+        flex-direction: column;
+    }
+}

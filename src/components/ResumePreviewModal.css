@@ -1,0 +1,136 @@
+.resume-preview-modal .modal-dialog {
+    max-width: 90vw;
+    height: 90vh;
+}
+
+.resume-preview-modal .modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.resume-preview-modal .modal-header {
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: none;
+}
+
+.resume-preview-modal .modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.resume-preview-modal .modal-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.resume-preview-body {
+    flex: 1;
+    overflow: hidden;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.resume-preview-container {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem;
+    background: white;
+}
+
+/* Custom scrollbar for preview */
+.resume-preview-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.resume-preview-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.resume-preview-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+.resume-preview-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5568ea 0%, #6644a2 100%);
+}
+
+.resume-preview-modal .modal-footer {
+    flex-shrink: 0;
+    border-top: 1px solid #dee2e6;
+    background: white;
+}
+
+/* Ensure resume renders properly in preview */
+#resume-for-preview {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100%;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .resume-preview-body {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .resume-preview-container {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] #resume-for-preview {
+    background: white;
+}
+
+[data-theme="dark"] .resume-preview-modal .modal-footer {
+    background: #2a2a2a;
+    border-top-color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resume-preview-modal .modal-dialog {
+        max-width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .resume-preview-container {
+        padding: 1rem;
+    }
+}
+
+/* Loading state */
+.resume-preview-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1.2rem;
+    color: #667eea;
+}
+
+.resume-preview-loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+
+    0%,
+    20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60%,
+    100% {
+        content: '...';
+    }
+}

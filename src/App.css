@@ -7,7 +7,8 @@
 .App {
   position: relative;
   min-height: 100vh;
-  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .App::after {
@@ -552,7 +553,7 @@ a:hover {
 footer {
   position: relative;
   padding: 2.5rem 0;
-  margin-top: 4rem;
+  margin-top: auto;
   text-align: center;
   border-top: 1px solid var(--surface-border);
   background: var(--surface-glass);
